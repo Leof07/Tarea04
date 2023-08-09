@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+</head>
+
+<body class="bg-body-secondary">
+    <div class="titulo p-4 ">
+        <h1>Registro de Producto</h1>
+    </div>
+    <div class="container">
+        <form action="save.html" method="get" class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <label for="inputCodigo" class="col-sm-2 col-form-label">Codigo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputCodigo" required>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">Por favor rellene el campo con el codigo.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputDescripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputDescripcion" required>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">Por favor rellene el campo con la descripcion.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="codigoBarra" class="col-sm-2 col-form-label">Codigo de barra</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputCodigoBarra" required>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">Por favor rellene el campo con el codigo de barra.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="precioUnitario" class="col-sm-2 col-form-label">Precio Unitario</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPrecioUnitario" required>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">Por favor rellene el campo con el precio unitario.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="stock" class="col-sm-2 col-form-label">Stock</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputStock" required>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">Por favor rellene el campo con el numero de stock.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="proveedor" class="col-sm-2 col-form-label">Proveedor</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputProveedor" required>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">Por favor rellene el campo con el nombre del proveedor.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-2">
+                    <label class="form-check-label col-sm-4" for="gridCheck1">Estado</label>
+                </div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <!--Este no se validara ya que el producto puede no estar activo-->
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck2">Activo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputState" class="form-label col-sm-2">Categoria</label>
+                <div class="col-sm-10">
+                    <select id="inputState" class="form-select col-sm-2" required>
+                        <option value="1" selected>Categoria 1</option>
+                        <option value="2">Categoria 2</option>
+                        <option value="3">Categoria 3</option>
+                        <option value="3">Categoria 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <input type="submit" value="Guardar" class="btn btn-primary">
+                </div>
+                <div class="col-sm-6 text-end">
+                    <button type="button" class="btn btn-danger" onclick="location.href='producto.html'">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>
